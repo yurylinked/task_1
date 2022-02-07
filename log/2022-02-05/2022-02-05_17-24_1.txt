@@ -1,0 +1,1 @@
+2022-02-05 17:24:26 [main] [main] [35] INFO  main.Main - Base array > entity.CustomArray@0

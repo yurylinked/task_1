@@ -1,0 +1,12 @@
+2022-02-05 10:27:17 [main] [read] [27] ERROR reader.impl.CustomReaderImpl - Failed or interrupted I/O operations while working on the file src\main\resources\data\array.txt.
+java.nio.file.NoSuchFileException: array.txt
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) ~[?:?]
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106) ~[?:?]
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111) ~[?:?]
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newFileChannel(UnixFileSystemProvider.java:181) ~[?:?]
+	at java.base/java.nio.channels.FileChannel.open(FileChannel.java:298) ~[?:?]
+	at java.base/java.nio.channels.FileChannel.open(FileChannel.java:357) ~[?:?]
+	at java.base/java.nio.file.Files.lines(Files.java:4132) ~[?:?]
+	at java.base/java.nio.file.Files.lines(Files.java:4227) ~[?:?]
+	at reader.impl.CustomReaderImpl.read(CustomReaderImpl.java:20) [classes/:?]
+	at main.Main.main(Main.java:28) [classes/:?]

@@ -1,0 +1,1 @@
+2022-02-05 10:27:17 [main] [main] [41] ERROR main.Main - exception.CustomException: Failed or interrupted I/O operations while working on the file src\main\resources\data\array.txt.

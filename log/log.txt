@@ -1,0 +1,1 @@
+2022-02-05 17:33:05 [main] [read] [31] ERROR reader.DataReader - resource exception .src/main/resources/data/array.txt
