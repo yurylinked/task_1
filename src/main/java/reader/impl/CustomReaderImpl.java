@@ -5,7 +5,7 @@ import exception.CustomException;
 import reader.CustomReader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import validator.ValidationIntImp;
+import validator.impl.ValidationIntImp;
 
 import java.io.*;
 

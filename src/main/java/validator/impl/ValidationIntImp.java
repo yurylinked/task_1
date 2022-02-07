@@ -1,4 +1,6 @@
-package validator;
+package validator.impl;
+
+import validator.ValidationInt;
 
 import java.util.Arrays;
 
