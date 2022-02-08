@@ -24,7 +24,6 @@ public class Main {
         ArrayStringToIntParser arrayStringToIntParser = new ArrayStringToIntParserImpl();
 
         String read = reader.read("src/main/resources/data/array.txt");
-        System.out.println(read);
         int[] ints = arrayStringToIntParser.parseInt(read);
         CustomArray customArray = new CustomArray(ints);
 
