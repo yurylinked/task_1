@@ -10,7 +10,7 @@ import validator.impl.ValidationIntImp;
 import java.io.*;
 
 
-public class CustomReaderImpl implements CustomReader, AutoCloseable {
+public class CustomReaderImpl implements CustomReader {
     static Logger logger = LogManager.getLogger();
     ValidationIntImp validationIntImp = new ValidationIntImp();
 
@@ -35,10 +35,6 @@ public class CustomReaderImpl implements CustomReader, AutoCloseable {
             throw new CustomException(e);
         }
         return stringBuilder.toString();
-    }
-
-    @Override
-    public void close() throws Exception {
     }
 }
 

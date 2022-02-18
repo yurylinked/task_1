@@ -1,10 +1,10 @@
-package services.impl;
+package service.impl;
 
 import entity.CustomArray;
 import exception.CustomException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import services.CustomArrayService;
+import service.CustomArrayService;
 
 import java.util.Arrays;
 

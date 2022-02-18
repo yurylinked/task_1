@@ -8,8 +8,8 @@ import parser.ArrayStringToIntParser;
 import parser.impl.ArrayStringToIntParserImpl;
 import reader.CustomReader;
 import reader.impl.CustomReaderImpl;
-import services.CustomArrayService;
-import services.impl.CustomArrayServiceImpl;
+import service.CustomArrayService;
+import service.impl.CustomArrayServiceImpl;
 
 import java.io.IOException;
 
@@ -26,11 +26,12 @@ public class Main {
         String read = reader.read("src/main/resources/data/array.txt");
         int[] ints = arrayStringToIntParser.parseInt(read);
         CustomArray customArray = new CustomArray(ints);
+        System.out.println(customArray);
 
-        int maxValue = customArrayService.findMaxValue(customArray);
-        int minValue = customArrayService.findMinValue(customArray);
-        System.out.println(maxValue);
-        System.out.println(minValue);
+        //int maxValue = customArrayService.findMaxValue(customArray);
+        // int minValue = customArrayService.findMinValue(customArray);
+        // System.out.println(maxValue);
+        //System.out.println(minValue);
 
     }
 }

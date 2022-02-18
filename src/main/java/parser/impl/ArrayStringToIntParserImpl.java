@@ -12,7 +12,7 @@ public class ArrayStringToIntParserImpl implements ArrayStringToIntParser {
 
     @Override
     public int[] parseInt(String string) throws CustomException {
-        if (string.isEmpty()) {
+        if (string.isEmpty() & string==null) {
             logger.error(" Data not found - string is empty.");
             throw new CustomException("Data not found - string is empty.");
         }
