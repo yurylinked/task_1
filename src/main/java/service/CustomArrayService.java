@@ -16,7 +16,7 @@ public interface CustomArrayService {
 
     double findAverageValueStream(CustomArray arr);
 
-    int countSumOfElements(CustomArray arr) throws CustomException;
+    int countSumOfElements(CustomArray arr);
 
     int countSumOfElementsStream(CustomArray arr) throws CustomException;
 
@@ -28,7 +28,9 @@ public interface CustomArrayService {
 
     int countNegativeElementsStream(CustomArray arr);
 
-    void replaceElementsByNegative(CustomArray arr, int newValue);
+    void replaceElementsByNegative(CustomArray arr) throws CustomException;
 
-    void replaceElementsByNegativeStream(CustomArray arr, int newValue);
+    void replaceElementsByNegativeStream(CustomArray arr) throws CustomException;
+
+    void bubbleSort(CustomArray arr);
 }

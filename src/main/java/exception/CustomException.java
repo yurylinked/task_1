@@ -5,9 +5,6 @@ public class CustomException extends Exception {
         super(message);
     }
 
-    public CustomException() {
-    }
-
     public CustomException(Throwable cause) {
         super(cause);
     }

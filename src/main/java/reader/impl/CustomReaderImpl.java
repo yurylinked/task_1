@@ -16,9 +16,7 @@ public class CustomReaderImpl implements CustomReader {
 
     public String read(String filename) throws CustomException {
         StringBuilder stringBuilder = new StringBuilder();
-        File file = new File(filename);
-        try (FileReader fileReader = new FileReader(file);
-             BufferedReader reader = new BufferedReader(fileReader);) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line = reader.readLine();
             while (line != null) {
                 if (validationIntImp.validateString(line)) {

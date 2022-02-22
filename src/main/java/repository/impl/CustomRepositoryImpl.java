@@ -7,6 +7,7 @@ import repository.CustomRepository;
 import repository.Specification;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class CustomRepositoryImpl implements CustomRepository {
     private static final Logger logger = LogManager.getLogger();
@@ -36,14 +37,16 @@ public class CustomRepositoryImpl implements CustomRepository {
     }
 
     @Override
-    public List querry(Specification specification) {
-        // final SortedSet<ArrayStatistic> statistics = new TreeSet<>(specification);
-        return null;
+    public List query(Specification specification) {
+       List<CustomArray> customArrayList= repository.stream().filter(o->specification.specify(o)).collect(Collectors.toList());
+        return customArrayList;
     }
 
     @Override
-    public List<CustomArray> sort(Comparator comparator) {
-        return null;
+    public List sort(Comparator<CustomArray> comparator) {
+        // final SortedSet<ArrayStatistic> statistics = new TreeSet<>(specification);
+        List <CustomArray> sortedList = repository.stream().sorted(comparator).collect(Collectors.toList());
+        return sortedList;
     }
 }
 

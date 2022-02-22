@@ -1,51 +1,49 @@
 package warehouse;
 
 import java.util.Objects;
-import java.util.OptionalDouble;
-import java.util.OptionalInt;
 
 public class ArrayStatistic {
-    private OptionalInt minValue;
-    private OptionalInt maxValue;
-    private OptionalInt sumElements;
-    private OptionalDouble averageValue;
+    private int minValue;
+    private int maxValue;
+    private int sumElements;
+    private double averageValue;
 
-    public ArrayStatistic(OptionalInt minValue, OptionalInt maxValue, OptionalInt sumElements, OptionalDouble averageValue) {
+    public ArrayStatistic(int minValue, int maxValue, int sumElements, double averageValue) {
         this.minValue = minValue;
         this.maxValue = maxValue;
         this.sumElements = sumElements;
         this.averageValue = averageValue;
     }
 
-    public OptionalInt getMinValue() {
+    public int getMinValue() {
         return minValue;
     }
 
-    public void setMinValue(OptionalInt minValue) {
+    public void setMinValue(int minValue) {
         this.minValue = minValue;
     }
 
-    public OptionalInt getMaxValue() {
+    public int getMaxValue() {
         return maxValue;
     }
 
-    public void setMaxValue(OptionalInt maxValue) {
+    public void setMaxValue(int maxValue) {
         this.maxValue = maxValue;
     }
 
-    public OptionalInt getSumElements() {
+    public int getSumElements() {
         return sumElements;
     }
 
-    public void setSumElements(OptionalInt sumElements) {
+    public void setSumElements(int sumElements) {
         this.sumElements = sumElements;
     }
 
-    public OptionalDouble getAverageValue() {
+    public double getAverageValue() {
         return averageValue;
     }
 
-    public void setAverageValue(OptionalDouble averageValue) {
+    public void setAverageValue(double averageValue) {
         this.averageValue = averageValue;
     }
 

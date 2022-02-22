@@ -1,79 +1,44 @@
 package service.impl;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import entity.CustomArray;
+import exception.CustomException;
+import org.junit.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-class CustomArrayServiceImplTest {
-    private CustomArrayServiceImpl service  = new CustomArrayServiceImpl();
+import static org.testng.Assert.*;
 
-    @BeforeEach
-    void setUp() {
-    }
+public class CustomArrayServiceImplTest {
+    CustomArrayServiceImpl customArrayService;
+    CustomArray customArray;
+    int[] array = {2, 3, 4};
 
-    @AfterEach
-    void tearDown() {
-    }
-
-    @Test
-    void findMaxValue() {
-//       int actual= service.findMaxValue(new CustomArray(3,4,5));
-//       int expected=5;
-//       assertEquals(actual,expected);
+    @BeforeMethod
+    public void setUp() {
+        customArrayService = new CustomArrayServiceImpl();
+        customArray = new CustomArray(array);
     }
 
     @Test
-    void findMaxValueStream() {
+    public void testFindMaxValue() {
+        int actual = customArrayService.findMaxValue(customArray);
+        int expected = 4;
+        Assert.assertEquals(actual, expected);
     }
 
     @Test
-    void findMinValue() {
-//        //int actual= service.findMinValue(new CustomArray(2,3,4,6));
-//        int expected=2;
-//        assertEquals(actual,expected);
+    public void testFindMinValue() {
+        int actual = customArrayService.findMinValue(customArray);
+        int expected = 2;
+        Assert.assertEquals(actual, expected);
     }
 
-    @Test
-    void findMinValueStream() {
-    }
 
     @Test
-    void findAverageValue() {
+    public void testFindAverageValue() throws CustomException {
+        double actual = customArrayService.findAverageValue(customArray);
+        int expected = 3;
+        Assert.assertEquals(actual, expected,0);
     }
 
-    @Test
-    void findAverageValueStream() {
-    }
-
-    @Test
-    void countSumOfElements() {
-    }
-
-    @Test
-    void countSumOfElementsStream() {
-    }
-
-    @Test
-    void countPositiveElements() {
-    }
-
-    @Test
-    void countPositiveElementsStream() {
-    }
-
-    @Test
-    void countNegativeElements() {
-    }
-
-    @Test
-    void countNegativeElementsStream() {
-    }
-
-    @Test
-    void replaceElementsByNegative() {
-    }
-
-    @Test
-    void replaceElementsByNegativeStream() {
-    }
 }

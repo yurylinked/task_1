@@ -3,7 +3,7 @@ package warehouse;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArrayWarehouse {//singleton +map
+public class ArrayWarehouse {
     private static ArrayWarehouse instance;
     private Map<Long, ArrayStatistic> warehouse = new HashMap<>();
 
@@ -23,6 +23,9 @@ public class ArrayWarehouse {//singleton +map
 
     public ArrayStatistic put(Long key, ArrayStatistic value) {
         return warehouse.put(key, value);
+    }
+    public ArrayStatistic replace(Long key, ArrayStatistic value) {
+        return warehouse.replace(key, value);
     }
     public ArrayStatistic remove(Long key){
         return warehouse.remove(key);

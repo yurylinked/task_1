@@ -1,5 +1,6 @@
 package entity;
 
+import exception.CustomException;
 import observer.ArrayEvent;
 import observer.Observable;
 import observer.ArrayObserver;
@@ -9,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
 
 public class CustomArray implements Observable {
     private long id;
@@ -34,7 +34,7 @@ public class CustomArray implements Observable {
         return array.clone();
     }
 
-    public void setArray(int[] array) {
+    public void setArray(int[] array) throws CustomException {
         this.array = array;
         notifyObservers();
     }
@@ -73,7 +73,7 @@ public class CustomArray implements Observable {
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers() throws CustomException {
         for (ArrayObserver observer : arrayObservers) {
             observer.updateParametrs(new ArrayEvent(this));
         }

@@ -46,8 +46,7 @@ public class CustomArrayServiceImpl implements CustomArrayService {
 
     @Override
     public int findMinValueStream(CustomArray arr) {
-        int min = Arrays.stream(arr.getArray()).min().getAsInt();
-        return min;
+        return Arrays.stream(arr.getArray()).min().getAsInt();
     }
 
     @Override
@@ -58,25 +57,22 @@ public class CustomArrayServiceImpl implements CustomArrayService {
 
     @Override
     public double findAverageValueStream(CustomArray arr) {
-        return 0;
+        return Arrays.stream(arr.getArray()).average().getAsDouble();
     }
 
     @Override
-    public int countSumOfElements(CustomArray arr) throws CustomException {
+    public int countSumOfElements(CustomArray arr) {
         int[] array = arr.getArray();
         int sumOfelements = array[0];
         for (int i = 1; i < array.length; i++) {
             sumOfelements += array[i];
         }
-        if (sumOfelements > Integer.MAX_VALUE) {
-            logger.error("Out of bounds int");
-            throw new CustomException("Out of bounds int");
-        } else return sumOfelements;
+        return sumOfelements;
     }
 
     @Override
     public int countSumOfElementsStream(CustomArray arr) throws CustomException {
-        return 0;
+        return Arrays.stream(arr.getArray()).sum();
     }
 
     @Override
@@ -93,8 +89,9 @@ public class CustomArrayServiceImpl implements CustomArrayService {
 
     @Override
     public int countPositiveElementsStream(CustomArray arr) {
-        return 0;
+        return Arrays.stream(arr.getArray()).filter(n -> n > 0).sum();
     }
+
 
     @Override
     public int countNegativeElements(CustomArray arr) {
@@ -110,11 +107,11 @@ public class CustomArrayServiceImpl implements CustomArrayService {
 
     @Override
     public int countNegativeElementsStream(CustomArray arr) {
-        return 0;
+        return Arrays.stream(arr.getArray()).filter(n -> n < 0).sum();
     }
 
     @Override
-    public void replaceElementsByNegative(CustomArray arr, int newValue) {
+    public void replaceElementsByNegative(CustomArray arr) throws CustomException {
         int[] array = arr.getArray();
 
         for (int i = 0; i < array.length; i++) {
@@ -125,7 +122,26 @@ public class CustomArrayServiceImpl implements CustomArrayService {
     }
 
     @Override
-    public void replaceElementsByNegativeStream(CustomArray arr, int newValue) {
+    public void replaceElementsByNegativeStream(CustomArray arr) throws CustomException {
+        int[] ints = Arrays.stream(arr.getArray()).filter(n -> n > 0).map(n -> (-1) * n).toArray();
+        arr.setArray(ints);
+    }
 
+    @Override
+    public void bubbleSort(CustomArray arr) {
+        int[] array = arr.getArray();
+        boolean isSorted = false;
+        int changeBox;
+        while (isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    isSorted = false;
+                    changeBox = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = changeBox;
+                }
+            }
+        }
     }
 }
